@@ -20,7 +20,7 @@ class HabitTracker.Models.Habit extends Backbone.Model
     @get("habit_type")==2
     
   isTodo: =>
-    @get('habit_type')==3
+    @get("habit_type")==3
 
   isDoneTodo: =>
     @isTodo() and @get("done")
@@ -29,7 +29,7 @@ class HabitTracker.Models.Habit extends Backbone.Model
     @isTodo() and !@get("done")
     
   isReward: =>
-    @get('habit_type')==4
+    @get("habit_type")==4
     
   vote: (direction) ->
     # For negative values, use a line: something like y=-.1x+1
