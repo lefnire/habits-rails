@@ -13,12 +13,15 @@
   
 <% } %>
 
-<span class="habit-text"><%= name %><%= habit_type==4 ? "($"+score+")" : '' %></span>
+<span class="habit-text"><%= name %></span>
 
 <div class='habit-meta'>
   <a class="edit-link" href="#/<%= id %>/edit">Edit</a>
   <% if (notes) { %>
     <img src='/assets/comment.png' class="comment" />
     <div class='qtip'><%= notes %></div>
+  <% } %>
+  <% if (habit_type==4) { %>
+    <%= score %><img height="20px" src="assets/coin_single_gold.png"/>
   <% } %>
 </div>
