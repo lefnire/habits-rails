@@ -31,13 +31,13 @@ class HabitTracker.Views.Habits.HabitView extends Backbone.View
     if @model.get("done") then output += " done"
     score = @model.get("score")
     switch
-      when score<-8 then output += ' color-red'
-      when score>=-8 and score<-5 then output += ' color-pink'
-      when score>=-5 and score<-1 then output += ' color-orange' 
-      #when score>=-1 and score<1 then output += ' color-yellow' #let's leave it white for now
-      when score>=1 and score<5 then output += ' color-green' 
-      when score>=5 and score<10 then output += ' color-light-blue' 
-      when score>=10 then output += ' color-blue'
+      when score<-8 then output += ' color-worst'
+      when score>=-8 and score<-5 then output += ' color-worse'
+      when score>=-5 and score<-1 then output += ' color-bad' 
+      when score>=-1 and score<1 then output += ' color-neutral'
+      when score>=1 and score<5 then output += ' color-good' 
+      when score>=5 and score<10 then output += ' color-better' 
+      when score>=10 then output += ' color-best'
     return output
     
   render: ->

@@ -2,13 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.color-red { background-color: rgb(230, 184, 175);  }
-.color-pink { background-color: rgb(244, 204, 204);  }
-.color-orange { background-color: rgb(252, 229, 205);   }
-.color-yellow { background-color: rgb(255, 242, 204); }
-.color-green { background-color: rgb(217, 234, 211); }
-.color-light-blue { background-color: rgb(208, 224, 227); }
-.color-blue { background-color: rgb(201, 218, 248); }
+.color-worst { background-color: rgb(230, 184, 175);  }
+.color-worse { background-color: rgb(244, 204, 204);  }
+.color-bad { background-color: rgb(252, 229, 205);   }
+/*.color-neutral { background-color: rgb(255, 242, 204); }*/
+.color-neutral { background-color: white; }
+.color-good { background-color: rgb(217, 234, 211); }
+.color-better { background-color: rgb(208, 224, 227); }
+.color-best { background-color: rgb(201, 218, 248); }
 .done { background-color: rgb(217, 217, 217); color: rgb(153, 153, 153); }
 .reward { background-color: white; }
 
