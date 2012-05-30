@@ -34,7 +34,7 @@ class HabitTracker.Views.Habits.HabitView extends Backbone.View
       when score<-8 then output += ' color-red'
       when score>=-8 and score<-5 then output += ' color-pink'
       when score>=-5 and score<-1 then output += ' color-orange' 
-      when score>=-1 and score<1 then output += ' color-yellow'
+      #when score>=-1 and score<1 then output += ' color-yellow' #let's leave it white for now
       when score>=1 and score<5 then output += ' color-green' 
       when score>=5 and score<10 then output += ' color-light-blue' 
       when score>=10 then output += ' color-blue'
