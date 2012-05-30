@@ -16,12 +16,7 @@
 <span class="habit-text"><%= name %></span>
 
 <div class='habit-meta'>
-  <div class='hover-show'>
-    <a href="#/<%= id %>/edit">Edit</a>
-    <% if (habit_type!=4) { %>
-      <%= score %><img height="20px" src="assets/coin_single_gold.png"/>
-    <% } %>
-  </div>
+  <a class="edit-link" href="#/<%= id %>/edit">Edit</a>
   <% if (notes) { %>
     <img src='/assets/comment.png' class="comment" />
     <div class='qtip'><%= notes %></div>
