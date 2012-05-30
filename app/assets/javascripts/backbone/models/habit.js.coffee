@@ -43,7 +43,11 @@ class HabitTracker.Models.Habit extends Backbone.Model
     else
       delta = (( Math.pow(0.9, score) ) * sign)
     
-    score += delta unless @isReward()
+    # Don't adjust scores for rewards, or for habits that don't have both + and -
+    adjustScore = !@isReward()
+    if @isHabit and (@get("up")==false or @get("down")==false)
+      adjustScore = false
+    score += delta if adjustScore 
     
     # up/down -voting as checkbox & assigning as done, 2 birds one stone
     done = @get("done")
