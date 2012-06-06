@@ -3,8 +3,12 @@
 class HabitTracker.Models.User extends Backbone.Model
   
   updateStats: (habit, delta) ->
-    # set exp
-    @set({exp: @get('exp')+delta})
+    #  If adding points, add to experience
+    if delta > 0
+      @set({exp: @get('exp')+delta})
+    # Deduct from health unless buying legitimately
+    else if !habit.isReward() or ( habit.isReward() and (@get('money')+delta < 0) )
+      @set({hp: @get('hp')+delta})
 
     # can't go below 0 exp
     if @get('exp') < 0 then @set({exp: 0})
@@ -21,7 +25,6 @@ class HabitTracker.Models.User extends Backbone.Model
     # apply same logic to money
     @set({money: @get('money')+delta})
     if @get('money') < 0 then @set({money: 0})
-      
       
     # if buying an item, deduct cost
     if habit.isReward()

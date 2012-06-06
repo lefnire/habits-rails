@@ -45,7 +45,7 @@ class HabitTracker.Views.Habits.IndexView extends Backbone.View
     $('#tnl').html( "(Level #{stats.get('lvl')})&nbsp;&nbsp;&nbsp;#{Math.round(stats.get('exp'))} / #{stats.tnl()}" )
     $( "#tnl-bar" ).progressbar value: stats.get('exp')/stats.tnl() * 100
 
-    $('#hp').html( "HP #{stats.get('hp')} / 50" )
+    $('#hp').html( "HP #{Math.round(stats.get('hp'))} / 50" )
     $( "#hp-bar" ).progressbar value: stats.get('hp')/50 * 100
 
     # TODO for some reason this has to be @$, but above has to be $
