@@ -1,21 +1,24 @@
-HabitRPG
+[HabitRPG](http://habitrpg.com)
 ============
 
 A habit-tracker which treats your goals like a Role Playing Game.  As you accomplish goals, you earn gold to spend on rewards, and experience points as you level up. When you fail at your goals, you lose hit points. Lose all your HP and you die (aka, have to start over with GP & Lvl).
 
-The live application can be found at [HabitRPG.com](http://habitrpg.com)
+* The live application can be found at [HabitRPG.com](http://habitrpg.com)
+* Roadmap: https://workflowy.com/shared/cd06313a-7c93-ae5f-ae55-e64cae0556e4/
+* For similar applications, see [7 Tools to Help Keep Track of Habits and Goals](http://www.lifehack.org/articles/technology/7-tools-to-help-keep-track-of-habits-and-goals.html).
 
-See [7 Tools to Help Keep Track of Habits and Goals](http://www.lifehack.org/articles/technology/7-tools-to-help-keep-track-of-habits-and-goals.html) for similar applications.
 
-* General Breakdown
-  ![General Breakdown](https://img.skitch.com/20120607-esscyibxfqqwqybsrcxwhhh5a8.jpg "General Breakdown")
-* Habits Explained
-  ![Habits Explained](https://img.skitch.com/20120607-mphu3r65tdrs2gpyx3wjm3hn4s.jpg "Habits Explained")
+How It Works
+-------
+**General Breakdown**
+![General Breakdown](https://img.skitch.com/20120607-esscyibxfqqwqybsrcxwhhh5a8.jpg "General Breakdown")
+
+**Goal Details**
+![Goal Details](https://img.skitch.com/20120607-mphu3r65tdrs2gpyx3wjm3hn4s.jpg "Goal Details")
 
 
 License
 -------
-
 Code is licensed under GNU GPL v3. Content is licensed under CC-BY-SA 3.0.
 See the LICENSE file for details.
 
