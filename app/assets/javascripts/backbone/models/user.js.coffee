@@ -3,32 +3,40 @@
 class HabitTracker.Models.User extends Backbone.Model
 
   updateStats: (habit, delta) ->
+    [money, hp, exp, lvl] = [@get('money'), @get('hp'), @get('exp'), @get('lvl')]
 
     if habit.isReward()
       # purchase item
-      @set {money: @get('money') - habit.get('score') }
+      money -= habit.get('score')
       # if too expensive, reduce health & zero money
-      if @get('money') < 0
-        difference = @get('money')
-        @set {money: 0, hp: @get('hp') + difference}
+      if money < 0
+        difference = money
+        money = 0
+        hp += difference
 
     # If positive delta, add points to exp & money
     # Only take away mony if it was a mistake (aka, a checkbox)
     if delta > 0 or (habit.isDaily() or habit.isTodo())
-      @set {exp: @get('exp')+delta, money: @get('money')+delta}
+      exp += delta
+      money += delta
     # Deduct from health (rewards case handled above)
     else if !habit.isReward()
-      @set {hp: @get('hp')+delta}
+      hp += +delta
 
     # level up & carry-over exp
-    if @get('exp') > @tnl()
-      @set { exp: @get('exp') - @tnl() , lvl: @get('lvl') + 1}
+    if exp > @tnl()
+      exp -= @tnl()
+      lvl += 1
       refresh = true
 
     # game over
-    if @get('hp') < 0
-      @set {hp: 50, lvl: 1, exp: 0}
+    if hp < 0
+      hp = 50
+      lvl = 1
+      exp = 0
       refresh = true
+
+    @set {money: money, hp: hp, exp: exp, lvl: lvl}
 
     # why did I have this?
     #@trigger 'updatedStats'
