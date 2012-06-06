@@ -9,7 +9,7 @@ See [7 Tools to Help Keep Track of Habits and Goals](http://www.lifehack.org/art
 License
 -------
 
-Code is licensed under MPL 2.0. Content is licensed under CC-BY-SA 3.0.
+Code is licensed under GNU GPL v3. Content is licensed under CC-BY-SA 3.0.
 See the LICENSE file for details.
 
 
