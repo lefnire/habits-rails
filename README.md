@@ -1,9 +1,16 @@
 HabitRPG
 ============
 
-A habit-tracker which treats your goals like a Role Playing Game.  As you accomplish goals, you earn gold to spend on rewards, and experience points as you level up. When you fail at your goals, you loose hit points. Lose all your HP and you die (aka, have to start over with GP & Lvl).
+A habit-tracker which treats your goals like a Role Playing Game.  As you accomplish goals, you earn gold to spend on rewards, and experience points as you level up. When you fail at your goals, you lose hit points. Lose all your HP and you die (aka, have to start over with GP & Lvl).
+
+The live application can be found at [HabitRPG.com](http://habitrpg.com)
 
 See [7 Tools to Help Keep Track of Habits and Goals](http://www.lifehack.org/articles/technology/7-tools-to-help-keep-track-of-habits-and-goals.html) for similar applications.
+
+* General Breakdown
+  ![General Breakdown](https://img.skitch.com/20120607-esscyibxfqqwqybsrcxwhhh5a8.jpg "General Breakdown")
+* Habits Explained
+  ![Habits Explained](https://img.skitch.com/20120607-mphu3r65tdrs2gpyx3wjm3hn4s.jpg "Habits Explained")
 
 
 License
