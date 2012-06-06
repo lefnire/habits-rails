@@ -43,7 +43,10 @@ class HabitTracker.Views.Habits.IndexView extends Backbone.View
   updateStats: () =>
     stats = window.userStats
     $('#tnl').html( "(Level #{stats.get('lvl')})&nbsp;&nbsp;&nbsp;#{Math.round(stats.get('exp'))} / #{stats.tnl()}" )
-    $( "#progressbar" ).progressbar value: stats.get('exp')/stats.tnl() * 100
+    $( "#tnl-bar" ).progressbar value: stats.get('exp')/stats.tnl() * 100
+
+    $('#hp').html( "HP #{stats.get('hp')} / 50" )
+    $( "#hp-bar" ).progressbar value: stats.get('hp')/50 * 100
 
     # TODO for some reason this has to be @$, but above has to be $
     money = stats.get('money').toFixed(1).split('.')

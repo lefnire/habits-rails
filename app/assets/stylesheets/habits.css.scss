@@ -52,9 +52,14 @@
   height:20px;  
 }
 
-#progressbar { margin-top: 20px; }
+#header { margin: 20px; }
 
 #tnl { float:right; margin:5px; }
+
+#hp-bar .ui-progressbar-value{ 
+  background-image: url("http://jqueryui.com/themeroller/images/?new=cc0000&w=1&h=100&f=png&q=100&fltr[]=over|textures/03_highlight_soft.png|0|0|15"); 
+  }
+#hp { float:right; margin:5px; }
 
 #money { float:right; }
 
