@@ -6,32 +6,32 @@ class HabitTracker.Models.User extends Backbone.Model
 
     if habit.isReward()
       # purchase item
-      @set({money: @get('money') - habit.get('score') })
+      @set {money: @get('money') - habit.get('score') }
       # if too expensive, reduce health & zero money
       if @get('money') < 0
         difference = @get('money')
-        @set({money: 0}, {hp: @get('hp') + difference})
+        @set {money: 0, hp: @get('hp') + difference}
 
     # If positive delta, add points to exp & money
     # Only take away mony if it was a mistake (aka, a checkbox)
     if delta > 0 or (habit.isDaily() or habit.isTodo())
-      @set({exp: @get('exp')+delta}, {money: @get('money')+delta})
+      @set {exp: @get('exp')+delta, money: @get('money')+delta}
     # Deduct from health (rewards case handled above)
     else if !habit.isReward()
-      @set({hp: @get('hp')+delta})
+      @set {hp: @get('hp')+delta}
 
     # level up & carry-over exp
     if @get('exp') > @tnl()
-      @set({ exp: @get('exp') - @tnl() })
-      @set({ lvl: @get('lvl') + 1 })
+      @set { exp: @get('exp') - @tnl() , lvl: @get('lvl') + 1}
       refresh = true
 
     # game over
     if @get('hp') < 0
-      @set({hp: 50, lvl: 1, exp: 0})
+      @set {hp: 50, lvl: 1, exp: 0}
       refresh = true
 
-    @trigger 'updatedStats'
+    # why did I have this?
+    #@trigger 'updatedStats'
 
     if refresh
       window.location.reload()
