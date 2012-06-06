@@ -54,6 +54,11 @@
 
 #header { margin: 20px; }
 
+#character img {
+  float: left;
+  height: 80px; 
+  }
+
 #tnl { float:right; margin:5px; }
 
 #hp-bar .ui-progressbar-value{ 
