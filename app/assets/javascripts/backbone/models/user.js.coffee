@@ -10,9 +10,8 @@ class HabitTracker.Models.User extends Backbone.Model
       money -= habit.get('score')
       # if too expensive, reduce health & zero money
       if money < 0
-        difference = money
+        hp += money # hp - money difference
         money = 0
-        hp += difference
 
     # If positive delta, add points to exp & money
     # Only take away mony if it was a mistake (aka, a checkbox)
