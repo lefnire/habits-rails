@@ -12,18 +12,17 @@ class HabitTracker.Views.Habits.HabitView extends Backbone.View
     @model.destroy()
     this.remove()
     return false
-    
+
   voteUp: =>
     @model.vote("up")
 
   voteDown: =>
     if @model.isReward and (@model.get('score') > window.userStats.get('money'))
-      $('#money').effect("pulsate", 100);      
-    else
-      @model.vote("down")
+      $('#money').effect("pulsate", 100);
+    @model.vote("down")
 
   tagName: "li"
-  
+
   # why is @model not available in this function? having to pass it in like this
   dynamicClass: () =>
     if @model.isReward() then return "reward"
