@@ -9,7 +9,7 @@ class HabitTracker.Models.User extends Backbone.Model
     # Deduct from health unless buying legitimately
     else if !habit.isReward() or ( habit.isReward() and (@get('money')+delta < 0) )
       @set({hp: @get('hp')+delta})
-
+    
     # can't go below 0 exp
     if @get('exp') < 0 then @set({exp: 0})
     
@@ -29,6 +29,10 @@ class HabitTracker.Models.User extends Backbone.Model
     # if buying an item, deduct cost
     if habit.isReward()
       @set({money: @get('money')-habit.get('score')})
+      
+    # game over
+    if @get('hp') < 0
+      @set({hp: 50, lvl: 1, exp: 0})
       
     @trigger('updatedStats')
       
