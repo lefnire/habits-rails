@@ -1,41 +1,42 @@
 # Basically a singleton global variable, not being synced with the server
 # Reason is habit.update() will calculate user stats on server
 class HabitTracker.Models.User extends Backbone.Model
-  
+
   updateStats: (habit, delta) ->
-    #  If adding points, add to experience
-    if delta > 0
-      @set({exp: @get('exp')+delta})
-    # Deduct from health unless buying legitimately
-    else if !habit.isReward() or ( habit.isReward() and (@get('money')+delta < 0) )
+
+    if habit.isReward()
+      # purchase item
+      @set({money: @get('money') - habit.get('score') })
+      # if too expensive, reduce health & zero money
+      if @get('money') < 0
+        difference = @get('money')
+        @set({money: 0}, {hp: @get('hp') + difference})
+
+    # If positive delta, add points to exp & money
+    # Only take away mony if it was a mistake (aka, a checkbox)
+    if delta > 0 or (habit.isDaily() or habit.isTodo())
+      @set({exp: @get('exp')+delta}, {money: @get('money')+delta})
+    # Deduct from health (rewards case handled above)
+    else if !habit.isReward()
       @set({hp: @get('hp')+delta})
-    
-    # can't go below 0 exp
-    if @get('exp') < 0 then @set({exp: 0})
-    
-    # level up & carry-over exp 
+
+    # level up & carry-over exp
     if @get('exp') > @tnl()
       @set({ exp: @get('exp') - @tnl() })
       @set({ lvl: @get('lvl') + 1 })
-    
-    # @deprecated also add money. Only take away money if it was a mistake (aka, a checkbox) 
-    # if delta>0 or (habit.isDaily() or habit.isTodo()) 
-      # @set({money: @get('money')+delta})
-      
-    # apply same logic to money
-    @set({money: @get('money')+delta})
-    if @get('money') < 0 then @set({money: 0})
-      
-    # if buying an item, deduct cost
-    if habit.isReward()
-      @set({money: @get('money')-habit.get('score')})
-      
+      refresh = true
+
     # game over
     if @get('hp') < 0
       @set({hp: 50, lvl: 1, exp: 0})
-      
-    @trigger('updatedStats')
-      
+      refresh = true
+
+    @trigger 'updatedStats'
+
+    if refresh
+      window.location.reload()
+
+
   tnl: () ->
     # http://tibia.wikia.com/wiki/Formula
     50 * Math.pow(@get('lvl'), 2) - 150 * @get('lvl') + 200
