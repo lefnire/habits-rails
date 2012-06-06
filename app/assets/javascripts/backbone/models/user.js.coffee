@@ -20,7 +20,7 @@ class HabitTracker.Models.User extends Backbone.Model
       money += delta
     # Deduct from health (rewards case handled above)
     else if !habit.isReward()
-      hp += +delta
+      hp += delta
 
     # level up & carry-over exp
     if exp > @tnl()
