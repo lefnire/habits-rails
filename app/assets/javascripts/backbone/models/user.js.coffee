@@ -30,15 +30,13 @@ class HabitTracker.Models.User extends Backbone.Model
 
     # game over
     if hp < 0
-      hp = 50
-      lvl = 1
-      exp = 0
+      [hp, lvl, exp] = [50, 1, 0]
       refresh = true
 
     @set {money: money, hp: hp, exp: exp, lvl: lvl}
 
-    # why did I have this?
-    #@trigger 'updatedStats'
+    # why do I have this?
+    @trigger 'updatedStats'
 
     if refresh
       window.location.reload()
