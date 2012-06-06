@@ -36,18 +36,30 @@
 
 <body>
   <div id="container">
+    
     <div id="header">
       <% if current_user %>
-        <div id="character"><%= image_tag "character.png" %></div>
-        <div id="hp-bar" style="width:30%;">
-          <span id="hp"></span>
-        </div>
-        <br/>
-        <div id="tnl-bar" style="width:30%;">
-          <span id="tnl"></span>
-        </div>
+        <table id="character">
+          <tr>
+            <td id="avatar">
+              <%= image_tag "character.png" %><br/>
+              <b><div id="lvl"></div></b>
+            </td>
+            <td id="bars">
+              <div id="hp-bar" style="width:400px;">
+                <span id="hp"></span>
+              </div>
+              <br/>
+              <div id="tnl-bar" style="width:400px;">
+                <span id="tnl"></span>
+              </div>
+            </td>
+          </tr>
+        </table>
       <% end %>
     </div>
+    <br/>
+    
     <div id="wrapper">
       <div class="flash">
         <% flash.each do |type, message| -%>

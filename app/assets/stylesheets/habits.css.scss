@@ -52,13 +52,18 @@
   height:20px;  
 }
 
-#header { margin: 20px; }
-
-#character img {
-  float: left;
-  height: 80px; 
+#header { 
+  margin: 20px;
   }
 
+#character img {
+  height: 60px; 
+  }
+
+#character td {
+  text-align: center;
+}
+  
 #tnl-bar { border: 1px solid black; }
 #tnl { float:right; margin:5px; }
 
