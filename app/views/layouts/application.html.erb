@@ -66,13 +66,13 @@
     <br/>
     
     <div id="wrapper">
-      <div class="flash">
+      <!--<div class="flash">
         <% flash.each do |type, message| -%>
           <div class="message <%= type %>">
             <p><%= message %></p>
           </div>
         <% end -%>
-      </div>
+      </div>-->
       <div id="main">
         <% if !current_user %>
           <%= link_to(image_tag("http://line6.com/images/connections/facebook-login-button.png", :alt =>  "Login with Facebook"), user_omniauth_authorize_path(:facebook)) %>
@@ -81,7 +81,8 @@
         <% end %>
         
         <div id="footer">
-          <p>Copyright &copy; 2012<!-- -<%= Time.now.year %>--> Tyler Renelle | <%= link_to "Logout", destroy_user_session_path, :method => :delete %></p>
+          <p>Copyright &copy; 2012<!-- -<%= Time.now.year %>--> Tyler Renelle
+            <%if current_user %> | <%= link_to "Logout", destroy_user_session_path, :method => :delete %><% end %></p>
         </div>
       </div>
     </div>
