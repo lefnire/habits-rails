@@ -9,6 +9,7 @@ class HabitTracker.Routers.HabitsRouter extends Backbone.Router
     "/index"    : "index"
     "/:id/edit" : "edit"
     ".*"        : "index"
+    "_=_"      : "index"
 
   newHabit: ->
     @view = new HabitTracker.Views.Habits.NewView(collection: @habits)
