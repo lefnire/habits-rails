@@ -7,7 +7,8 @@ HabitTracker::Application.routes.draw do
     end
   end
 
-  devise_for :users, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
+  #devise_for :users, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :tokens,:only => [:create, :destroy]
 
   # The priority is based upon order of creation:

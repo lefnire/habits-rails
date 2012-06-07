@@ -75,6 +75,9 @@
       </div>
       <div id="main">
         <%= yield %>
+        <% if !current_user %>
+          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+        <% end %>
         <div id="footer">
           <p>Copyright &copy; 2012<!-- -<%= Time.now.year %>--> Tyler Renelle | <%= link_to "Logout", destroy_user_session_path, :method => :delete %></p>
         </div>
