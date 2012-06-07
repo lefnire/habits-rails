@@ -22,6 +22,12 @@ class User < ActiveRecord::Base
       self.exp -= self.tnl # carry over
       self.lvl += 1
     end
+    
+    if self.hp < 0
+      self.hp = 50
+      self.lvl = 1
+      self.exp = 0
+    end
   end
 
   #TODO figure this out. Google "RPG level up formula" or something

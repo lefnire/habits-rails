@@ -17,9 +17,8 @@ class Habit < ActiveRecord::Base
         value = (h.score < 0) ? (( -0.1 * h.score + 1 ) * -1) : (( 0.9 ** h.score ) * -1)
         # Deduct experience for missed Daily tasks, 
         # but not for Todos (just increase todo's value)
-        if(h.habit_type==2)
-          h.user.exp += value
-          h.user.money += value
+        if (h.habit_type==2)
+          h.user.hp += value
           h.user.save
         end
         h.score += value
