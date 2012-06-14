@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
     if (self.exp > self.tnl)
       self.exp -= self.tnl # carry over
       self.lvl += 1
+      self.hp = 50
     end
     
     if self.hp < 0

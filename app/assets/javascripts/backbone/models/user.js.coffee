@@ -26,6 +26,7 @@ class HabitTracker.Models.User extends Backbone.Model
     if exp > @tnl()
       exp -= @tnl()
       lvl += 1
+      hp = 50
       refresh = true
 
     # game over
