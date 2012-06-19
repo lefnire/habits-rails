@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
       self.hp = 50
       self.lvl = 1
       self.exp = 0
+      self.money = 0
     end
   end
 

@@ -31,7 +31,7 @@ class HabitTracker.Models.User extends Backbone.Model
 
     # game over
     if hp < 0
-      [hp, lvl, exp] = [50, 1, 0]
+      [hp, lvl, exp, money] = [50, 1, 0, 0]
       refresh = true
 
     @set {money: money, hp: hp, exp: exp, lvl: lvl}
