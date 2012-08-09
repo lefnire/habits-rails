@@ -1,4 +1,4 @@
-Deprecated original version of HabitRPG which was built on Rails & Backbone.js. It's been migrated to DerbyJS at [lefnire/habitrpg](/lefnire/habitrpg)
+Deprecated original version of HabitRPG which was built on Rails & Backbone.js. You can find the old site [here](http://habitrpg-rails.herokuapp.com). This project has been migrated to DerbyJS at [lefnire/habitrpg](/lefnire/habitrpg)
 
 License
 -------
